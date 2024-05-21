@@ -15,8 +15,11 @@ const programsRouter = require("./programs/router");
 
 const itemsRouter = require("./items/router");
 
+const categoryRouter = require("./catActions/router");
+
 router.use("/items", itemsRouter);
 router.use("/programs", programsRouter);
+router.use("/categories", categoryRouter);
 /* ************************************************************************* */
 
 

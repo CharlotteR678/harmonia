@@ -10,7 +10,7 @@ const router = express.Router();
 
 /* ************************************************************************* */
 
-const { browse, read } = require("../../../controllers/programsAction");
+const { browse, read } = require("../../../controllers/categoryActions");
 
 router.get("/", browse);
 router.get("/:id", read);
