@@ -10,16 +10,9 @@ const router = express.Router();
 
 /* ************************************************************************* */
 
-
-// Import item-related actions
-
 const { browse } = require("../../../controllers/programsAction");
 
-
-// Route to get a list of programs
-
 router.get("/", browse);
-
 
 /* ************************************************************************* */
 
