@@ -24,4 +24,5 @@ create table program (
   country varchar(255) not null,
   program_year int not null,
   category_id int
+  foreign key(category_id) references category(id)
 );

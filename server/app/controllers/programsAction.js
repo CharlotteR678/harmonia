@@ -1,5 +1,8 @@
 // Some data to make the trick
 
+const tables = require("../../database/tables");
+
+
 const programs = [
     {
       id: 1,
@@ -24,25 +27,31 @@ const programs = [
   ];
   
   // Declare the action
-  const browse = (req, res) => {
+  // const browse = (req, res) => {
 
-    if (req.query.q != null) {
+  //   if (req.query.q != null) {
   
-      const filteredPrograms = programs.filter((program) =>
+  //     const filteredPrograms = programs.filter((program) =>
   
-        program.synopsis.includes(req.query.q)
+  //       program.synopsis.includes(req.query.q)
   
-      );
+  //     );
   
   
-      res.json(filteredPrograms);
+  //     res.json(filteredPrograms);
   
-    } else {
+  //   } else {
   
-      res.json(programs);
+  //     res.json(programs);
   
-    }
+  //   }
   
+  // };
+
+  const browse = async(req, res) => {
+    const programsFromDB = await tables.program.readAll();
+  
+    res.json(programsFromDB);
   };
 
 
